@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--注意命名空间 -->
+<mapper namespace="com.code.dao.UserDao" >
+  <resultMap id="userResult" type="com.code.bean.User" >
+    <result column="id" property="id"/>
+    <result column="userName" property="user_name"/>
+   	<result column="passWord" property="user_no"/>
+   	<result column="gender" property="user_gender"/> 
+  </resultMap>
+    <select id="selectUserByModel" resultMap="userResult">
+        SELECT * FROM user where id=#{Id} 
+    </select>
+
+</mapper>
